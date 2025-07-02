@@ -25,10 +25,12 @@ cloud2_cell = Cell(Type.CLOUD2)
 cloud3_cell = Cell(Type.CLOUD3)
 mushroom_cell = Cell(Type.MUSHROOM)
 
+speeder_cell = Cell(Type.SPEEDER)
+
 
 class Levels:
     def __init__(self):
-        self.levels = [Level1(), Level2(), Level3(), Level4(), Level5(), Level6(), Level7(), Level8(), Level9()]
+        self.levels = [Level1(), Level2(), Level3(), Level4(), Level5(), Level6(), Level7(), Level8()]
         self.current = 0
         self.count = len(self.levels)
 
@@ -197,6 +199,8 @@ class Level4(Scene):
 
         self.rectangle(10, 20, 80, 40, orange_grass_cell)
 
+        self.rectangle(30, 25, 45, 35, speeder_cell) #ubah x=25
+
         self.horizontal_line(10, 80, 20, wall_cell, down=True)
         self.horizontal_line(10, 80, 40, wall_cell, down=False)
         self.vertical_line(20, 40, 10, wall_cell, right=True)
@@ -204,73 +208,10 @@ class Level4(Scene):
 
     @property
     def carts(self):
-        return [Cart(indexes_2_pixels(40, 25), 15, *indexes_2_pixels(20, 39), is_vertical=True),
-                Cart(indexes_2_pixels(50, 25), 10, *indexes_2_pixels(20, 39), is_vertical=True),
-                Cart(indexes_2_pixels(60, 25), 20, *indexes_2_pixels(20, 39), is_vertical=True)]
+        return None
 
 
 class Level5(Scene):
-    def __init__(self):
-        super().__init__()
-        self.start_point = indexes_2_pixels(78, 20)
-        self.end_point = indexes_2_pixels(76, 38)
-        self.background_color = (182, 94, 38)
-
-    def init(self):
-        self.init_board()
-        self.walls = []
-
-        self.rectangle(0, 0, 89, 59, orange_cell)
-
-        self.random_on_rect(0, 0, 89, 59, cactus_cell, 100)
-        self.random_on_rect(0, 0, 89, 59, empty_tree_cell, 100)
-        self.random_on_rect(0, 0, 89, 59, orange_tree_cell, 100)
-
-        self.rectangle(70, 10, 80, 30, orange_grass_cell)
-        self.rectangle(60, 15, 70, 25, orange_grass_cell)
-        self.rectangle(10, 10, 60, 30, orange_grass_cell)
-        self.rectangle(10, 30, 25, 50, orange_grass_cell)
-        self.rectangle(25, 45, 80, 50, orange_grass_cell)
-        self.rectangle(70, 35, 80, 45, orange_grass_cell)
-
-        self.rectangle(45, 15, 55, 25, sand_cell)
-
-        self.horizontal_line(70, 80, 10, wall_cell, down=True)
-        self.horizontal_line(70, 80, 30, wall_cell, down=False)
-
-        self.vertical_line(10, 15, 70, wall_cell, right=True)
-        self.vertical_line(25, 30, 70, wall_cell, right=True)
-        self.vertical_line(10, 30, 80, wall_cell, right=False)
-
-        self.horizontal_line(60, 70, 15, wall_cell, down=True)
-        self.horizontal_line(60, 70, 25, wall_cell, down=False)
-
-        self.vertical_line(10, 15, 60, wall_cell, right=False)
-        self.vertical_line(25, 30, 60, wall_cell, right=False)
-
-        self.horizontal_line(10, 60, 10, wall_cell, down=True)
-        self.horizontal_line(25, 60, 30, wall_cell, down=False)
-
-        self.vertical_line(10, 50, 10, wall_cell, right=True)
-        self.vertical_line(30, 45, 25, wall_cell, right=False)
-
-        self.horizontal_line(25, 70, 45, wall_cell, down=True)
-        self.horizontal_line(10, 80, 50, wall_cell, down=False)
-
-        self.vertical_line(35, 45, 70, wall_cell, right=True)
-        self.vertical_line(35, 50, 80, wall_cell, right=False)
-
-        self.horizontal_line(70, 80, 35, wall_cell, down=True)
-
-    @property
-    def carts(self):
-        return [Cart(indexes_2_pixels(50, 20), 15, *indexes_2_pixels(10, 30-1), is_vertical=True),
-                Cart(indexes_2_pixels(30, 20), 15, *indexes_2_pixels(10, 30 - 1), is_vertical=True),
-                Cart(indexes_2_pixels(20, 35), 10, *indexes_2_pixels(10, 25-1), is_vertical=False),
-                Cart(indexes_2_pixels(40, 47), 3, *indexes_2_pixels(45, 50-1), is_vertical=True)]
-
-
-class Level6(Scene):
     def __init__(self):
         super().__init__()
         self.start_point = indexes_2_pixels(45, 48)
@@ -334,16 +275,9 @@ class Level6(Scene):
 
     @property
     def carts(self):
-        return [Cart(indexes_2_pixels(52, 39), 2, *indexes_2_pixels(50, 55-1), is_vertical=False),
-                Cart(indexes_2_pixels(37, 39), 2, *indexes_2_pixels(35, 40 - 1), is_vertical=False),
-                Cart(indexes_2_pixels(34, 32), 2, *indexes_2_pixels(30, 35 - 1), is_vertical=True),
-                Cart(indexes_2_pixels(55, 32), 2, *indexes_2_pixels(30, 35 - 1), is_vertical=True),
-                Cart(indexes_2_pixels(15, 29), 5, *indexes_2_pixels(10, 20-1), is_vertical=False),
-                Cart(indexes_2_pixels(75, 29), 5, *indexes_2_pixels(70, 80-1), is_vertical=False),
-                Cart(indexes_2_pixels(45, 20), 5, *indexes_2_pixels(40, 50-1), is_vertical=False)]
+        return None
 
-
-class Level7(Scene):
+class Level6(Scene):
     def __init__(self):
         super().__init__()
         self.start_point = indexes_2_pixels(15, 20)
@@ -379,7 +313,7 @@ class Level7(Scene):
         return None
 
 
-class Level8(Scene):
+class Level7(Scene):
     def __init__(self):
         super().__init__()
         self.start_point = indexes_2_pixels(15, 12)
@@ -428,7 +362,7 @@ class Level8(Scene):
         return None
 
 
-class Level9(Scene):
+class Level8(Scene):
     def __init__(self):
         super().__init__()
         self.start_point = indexes_2_pixels(15, 47)

@@ -15,13 +15,18 @@ class Ball(Circle, Rigidbody):
         image = pygame.transform.scale(image, (radius*2, radius*2))
         self.image = image
 
+
     def ground_friction(self, ground_type):
         if ground_type == Type.GRASS or ground_type == Type.ORANGE_GRASS:
-            self.friction = 0.98
+            self.friction = 0.968
         elif ground_type == Type.SAND:
-            self.friction = 0.80
+            self.friction = 0.877
         elif ground_type == Type.WATER:
-            self.friction = 0.70
+            self.friction = 0.747
+        elif ground_type == Type.SPEEDER:
+            self.friction = 0.9797
+        else:
+            self.friction = max(0.05, self.friction)  # Pastikan tidak 0
 
     def not_moving(self):
         return self.vel.length() <= 0.1

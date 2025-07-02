@@ -44,6 +44,7 @@ class Type(Enum):
     CLOUD3 = 20
     MUSHROOM = 21
     CART2 = 22
+    SPEEDER = 23
 
 
 position_map = {Type.GRASS: image_at(5, 0),
@@ -68,7 +69,7 @@ position_map = {Type.GRASS: image_at(5, 0),
                 Type.CLOUD2: image_at(55, 24),
                 Type.CLOUD3: image_at(56, 24),
                 Type.MUSHROOM: image_at(48, 5),
-                }
+                Type.SPEEDER: image_at(25,15)}
 
 
 def get_image(cell_type):
