@@ -52,3 +52,21 @@ python main.py
 ---
 
 ## 📁 Struktur Proyek
+TUBES-ELMAG/
+├── images/              # Aset gambar/sprite game
+├── main.py              # Entry point dan game loop utama
+├── game_manager.py      # Pengelolaan level, skor, dan status permainan
+├── game_objects.py      # Definisi objek Ball dan Hole
+├── physics.py           # Perhitungan fisika: gaya, gesekan, tumbukan
+├── rigidbody.py         # Struktur dasar objek dengan properti fisik
+├── shapes.py            # Definisi bentuk geometri (Line, dsb.)
+├── scene.py             # Pengelolaan scene/tampilan
+├── levels.py            # Definisi dan konfigurasi tiap level
+├── cell.py              # Representasi grid/sel pada papan permainan
+├── transformation.py    # Konversi koordinat piksel ke indeks grid
+├── sprite_sheet.py       # Pengelolaan sprite sheet untuk animasi
+├── config.py             # Konfigurasi global (ukuran layar, radius bola, dll.)
+└── main.exe              # Build executable untuk Windows
+
+## 📄 Lisensi
+Proyek ini dibuat untuk keperluan tugas akademik mata kuliah Elektromagnetika.
